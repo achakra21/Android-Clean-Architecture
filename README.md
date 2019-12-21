@@ -21,4 +21,4 @@ What's new in this project
 2.Each screen is separated as module's with their own layout folder and their own mvvm package structure.
 
 
-![Test Image 4](https://res.cloudinary.com/achakra21/image/upload/v1576870554/github/Screenshot_2019-12-21_at_1.06.15_AM.png)
+![Test Image 4](https://res.cloudinary.com/achakra21/image/upload/v1576893505/ezgif.com-resize_1_xznolm.gif)
