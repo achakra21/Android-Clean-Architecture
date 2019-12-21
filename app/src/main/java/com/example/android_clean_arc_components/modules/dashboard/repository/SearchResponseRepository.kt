@@ -2,7 +2,6 @@ package com.example.android_clean_arc_components.modules.dashboard.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.example.android_clean_arc_components.modules.dashboard.model.SearchResponse
-import com.example.android_clean_arc_components.modules.dashboard.networking.RestUtilsService
 import com.example.android_clean_arc_components.modules.dashboard.networking.RetrofitFactory
 import kotlinx.coroutines.*
 import retrofit2.HttpException
@@ -11,7 +10,7 @@ class SearchResponseRepository {
 
 
 
-    private var movies = mutableListOf<SearchResponse>()
+    private var mutableList = mutableListOf<SearchResponse>()
     private var mutableLiveData = MutableLiveData<List<SearchResponse>>()
     val completableJob = Job()
     private val coroutineScope = CoroutineScope(Dispatchers.IO + completableJob)
@@ -27,10 +26,10 @@ class SearchResponseRepository {
                 try {
 
                     val response = request
-                    val mBlogWrapper = response;
-                    if (mBlogWrapper != null ) {
-                        movies = mBlogWrapper as MutableList<SearchResponse>;
-                        mutableLiveData.value=movies;
+                    val mData = response;
+                    if (mData != null ) {
+                        mutableList = mData as MutableList<SearchResponse>;
+                        mutableLiveData.value=mutableList;
                     }
 
                 } catch (e: HttpException) {

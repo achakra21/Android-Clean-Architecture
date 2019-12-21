@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -22,7 +24,7 @@ android {
     }
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'src/main/res/home', 'src/main/res/layouts/home', 'src/main/res/layouts/dashbord', 'src/main/res/layouts/notification', 'src/main/res/layouts/dashbord/layout', 'src/main/res/layouts/home/layout', 'src/main/res/layouts/notification/layout']
+            res.srcDirs = ['src/main/res', 'src/main/res/home', 'src/main/res/layouts/home', 'src/main/res/layouts/dashbord', 'src/main/res/layouts/notification', 'src/main/res/layouts/dashbord/layout', 'src/main/res/layouts/home/layout', 'src/main/res/layouts/notification/layout', 'src/main/res/layouts/rooms', 'src/main/res/layouts/rooms/layout', 'src/main/res/layouts/rooms/value', 'src/main/res/layouts/rooms/values']
         }
 
 
@@ -64,5 +66,17 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.2.1")
     implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+
+    // Room components
+    implementation "androidx.room:room-runtime:2.2.0"
+    implementation "androidx.room:room-ktx:2.2.0"
+    kapt "androidx.room:room-compiler:2.2.0"
+    androidTestImplementation "androidx.room:room-testing:2.2.0"
+
+    //viewmodel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
+
+
 
 }

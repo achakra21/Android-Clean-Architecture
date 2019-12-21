@@ -1,6 +1,5 @@
 package com.example.android_clean_arc_components.modules.dashboard.view
 
-import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 import com.example.android_clean_arc_components.R
 import com.example.android_clean_arc_components.modules.dashboard.model.SearchResponse
@@ -23,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_dashboard.*
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
-    var mBlogAdapter: SearchResponseAdapter? = null
+    var searchResponseAdapter: SearchResponseAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,15 +44,15 @@ class DashboardFragment : Fragment() {
     }
 
     private fun prepareRecyclerView(blogList: List<SearchResponse>) {
-        mBlogAdapter = SearchResponseAdapter(blogList)
+        searchResponseAdapter = SearchResponseAdapter(blogList)
         if (this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
 
             recyclerview.setLayoutManager(LinearLayoutManager(activity))
         } else {
             recyclerview.setLayoutManager(GridLayoutManager(activity, 4))
         }
-        //recyclerview.setItemAnimator(DefaultItemAnimator())
-        recyclerview.setAdapter(mBlogAdapter)
+        recyclerview.setItemAnimator(DefaultItemAnimator())
+        recyclerview.setAdapter(searchResponseAdapter)
     }
 }
 

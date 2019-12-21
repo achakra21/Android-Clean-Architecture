@@ -8,7 +8,7 @@ object RetrofitFactory {
 
     val BASE_URL = "https://jsonplaceholder.typicode.com"
 
-    //here we build service call with model class with coroutine
+
 
     fun makeRetrofitService(): RestUtilsService {
         return Retrofit.Builder()
