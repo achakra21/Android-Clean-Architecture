@@ -1,12 +1,9 @@
 package com.example.android_clean_arc_components.modules.room.viewmodel
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
 import com.example.android_clean_arc_components.modules.room.database.WordRoomDatabase
 import com.example.android_clean_arc_components.modules.room.model.Word
 import com.example.android_clean_arc_components.modules.room.repository.WordRepository
